@@ -158,11 +158,11 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
         print(' (if another token is entered with the query, the default is overridden)')
 
     with torch.no_grad():
-        # if img_path is None:
-        #     loop=True
-        #     img_path=input('Image path: ')
-        # else:
-        #     loop=False
+        if img_path is None:
+            loop=True
+            img_path=input('Image path: ')
+        else:
+            loop=False
         while img_path!='q':
             img = img_f.imread(img_path,False)
             print("168")
