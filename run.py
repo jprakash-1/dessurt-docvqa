@@ -275,7 +275,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
                     img_f.imshow('x',show_im)
                     img_f.show()
 
-                question = input('Query ("q" to stop): ')
+                question = input('Query ("q" to stop 278): ') 
             
 
 if __name__ == '__main__':
