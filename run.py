@@ -282,6 +282,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
                 question = 'q'
                 img_path = 'q'
                 break
+            break
 
 
 if __name__ == '__main__':
