@@ -279,6 +279,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
             # if loop:
             #     img_path = input('Image path ("q" to stop): ')
             # else:
+                question = 'q'
                 img_path = 'q'
 
 
