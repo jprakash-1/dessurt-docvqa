@@ -17,7 +17,7 @@ from utils import img_f
 from skimage import future
 
 
-def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=None,do_saliency=False,default_task_token=None,dont_output_mask=False):
+def main(resume,config,img_path,query,addToConfig=None,gpu=False,do_pad=None,scale=None,do_saliency=False,default_task_token=None,dont_output_mask=False):
     np.random.seed(1234)
     torch.manual_seed(1234)
     no_mask_qs = ['fli:','fna:','re~','l~','v~', 'mm~','mk>','natural_q~','json>','json~','linkdown-text~', 'read_block>']
@@ -158,11 +158,11 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
         print(' (if another token is entered with the query, the default is overridden)')
 
     with torch.no_grad():
-        if img_path is None:
-            loop=True
-            img_path=input('Image path: ')
-        else:
-            loop=False
+        # if img_path is None:
+        #     loop=True
+        #     img_path=input('Image path: ')
+        # else:
+        #     loop=False
         while img_path!='q':
             img = img_f.imread(img_path,False)
             #import pdb;pdb.set_trace()
@@ -211,7 +211,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
             if gpu:
                 img = img.cuda()
 
-            question = input('Query: ')
+            question = query
             while question!='q':
                 if question.startswith('[nr]'):
                     run=False
@@ -275,10 +275,10 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
                     img_f.imshow('x',show_im)
                     img_f.show()
 
-                question = input('Query ("q" to stop): ')
-            if loop:
-                img_path = input('Image path ("q" to stop): ')
-            else:
+            #     question = input('Query ("q" to stop): ')
+            # if loop:
+            #     img_path = input('Image path ("q" to stop): ')
+            # else:
                 img_path = 'q'
 
 
