@@ -212,7 +212,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
 
             if gpu:
                 img = img.cuda()
-
+            print("address is")
             question = "Address is"
             while question!='q':
                 print("216")
