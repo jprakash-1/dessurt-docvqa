@@ -166,7 +166,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
         while img_path!='q':
             img = img_f.imread(img_path,False)
             print("168")
-            break
+            # break
             #import pdb;pdb.set_trace()
             if img.max()<=1:
                 img*=255
@@ -216,7 +216,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
             question = "Address is"
             while question!='q':
                 print("216")
-                break
+                # break
                 if question.startswith('[nr]'):
                     run=False
                     question=question[4:]
@@ -285,8 +285,8 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
             # else:
                 question = 'q'
                 img_path = 'q'
-                break
-            break
+                # break
+            # break
 
 
 if __name__ == '__main__':
