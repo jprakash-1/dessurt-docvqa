@@ -159,7 +159,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
 
     with torch.no_grad():
         if img_path is None:
-            loop=True
+            loop=False
             img_path=input('Image path: ')
         else:
             loop=False
