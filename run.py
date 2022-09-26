@@ -17,7 +17,7 @@ from utils import img_f
 from skimage import future
 
 
-def main(resume,config,img_path,query,addToConfig=None,gpu=False,do_pad=None,scale=None,do_saliency=False,default_task_token=None,dont_output_mask=False):
+def main(resume,config,img_path,questionAsked,addToConfig=None,gpu=False,do_pad=None,scale=None,do_saliency=False,default_task_token=None,dont_output_mask=False):
     np.random.seed(1234)
     torch.manual_seed(1234)
     no_mask_qs = ['fli:','fna:','re~','l~','v~', 'mm~','mk>','natural_q~','json>','json~','linkdown-text~', 'read_block>']
@@ -211,7 +211,7 @@ def main(resume,config,img_path,query,addToConfig=None,gpu=False,do_pad=None,sca
             if gpu:
                 img = img.cuda()
 
-            question = query
+            question = questionAsked
             while question!='q':
                 if question.startswith('[nr]'):
                     run=False
