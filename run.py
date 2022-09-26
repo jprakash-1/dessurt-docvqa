@@ -276,11 +276,7 @@ def main(resume,config,img_path,addToConfig=None,gpu=False,do_pad=None,scale=Non
                     img_f.show()
 
                 question = input('Query ("q" to stop): ')
-            if loop:
-                img_path = input('Image path ("q" to stop): ')
-            else:
-                img_path = 'q'
-
+            
 
 if __name__ == '__main__':
     logger = logging.getLogger()
